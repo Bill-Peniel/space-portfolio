@@ -33,6 +33,8 @@ export default function Navigation() {
         <div className="flex justify-between items-center">
           <div className="text-2xl font-bold text-cyan-400 glitch relative" data-text="SPACE.DEV">
             SPACE.DEV
+          <div className="text-2xl font-bold text-cyan-400 glitch relative" data-text="YONKO.DEV">
+            YONKO.DEV
           </div>
           
           <div className="hidden md:flex space-x-8">

@@ -5,6 +5,8 @@
       <div class="flex justify-between items-center">
         <div class="text-2xl font-bold text-cyan-400 glitch relative" data-text="SPACE.DEV">
           SPACE.DEV
+        <div class="text-2xl font-bold text-cyan-400 glitch relative" data-text="YONKO.DEV">
+          YONKO.DEV
         </div>
         
         <div class="hidden md:flex space-x-8">
