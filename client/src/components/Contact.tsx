@@ -149,7 +149,7 @@ export default function Contact() {
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-slate-400">RESPONSE.TIME:</span>
-                  <span className="text-cyan-400">< 24.HOURS</span>
+                  <span className="text-cyan-400">&lt; 24.HOURS</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-slate-400">LOCATION:</span>
