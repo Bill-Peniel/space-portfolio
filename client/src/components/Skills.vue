@@ -146,7 +146,7 @@ export default {
             easing: 'easeOutExpo',
             delay: Math.random() * 1000,
             update: () => {
-              this.$set(this.animatedSkills.frontend, index, Math.floor(obj.width))
+              this.animatedSkills.frontend[index] = Math.floor(obj.width)
             }
           })
         }
@@ -163,7 +163,7 @@ export default {
             easing: 'easeOutExpo',
             delay: Math.random() * 1000,
             update: () => {
-              this.$set(this.animatedSkills.backend, index, Math.floor(obj.width))
+              this.animatedSkills.backend[index] = Math.floor(obj.width)
             }
           })
         }

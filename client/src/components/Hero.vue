@@ -139,7 +139,7 @@ export default {
             duration: 2000,
             easing: 'easeOutExpo',
             update: () => {
-              this.$set(this.animatedCounts, index, Math.floor(obj.count))
+              this.animatedCounts[index] = Math.floor(obj.count)
             }
           })
         }
