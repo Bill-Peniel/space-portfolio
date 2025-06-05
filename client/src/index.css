@@ -1,0 +1,214 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  --popover: 240 10% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --card: 240 10% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --primary: 180 100% 50%;
+  --primary-foreground: 240 10% 3.9%;
+  --secondary: 240 3.7% 15.9%;
+  --secondary-foreground: 0 0% 98%;
+  --accent: 240 3.7% 15.9%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 240 4.9% 83.9%;
+  --radius: 0.5rem;
+  
+  /* Space theme colors */
+  --space-dark: 240 25% 6%;
+  --space-darker: 240 25% 9%;
+  --space-blue: 225 39% 17%;
+  --space-purple: 235 28% 24%;
+  --space-gray: 225 25% 34%;
+  --neon-cyan: 180 100% 50%;
+  --neon-pink: 0 85% 70%;
+  --neon-green: 92 100% 54%;
+  --space-light: 216 17% 90%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-mono antialiased bg-background text-foreground;
+    font-family: 'Space Mono', monospace;
+    background-color: hsl(var(--space-dark));
+    color: hsl(var(--space-light));
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  .space-gradient {
+    background: linear-gradient(45deg, 
+      hsl(var(--space-dark)), 
+      hsl(var(--space-darker)), 
+      hsl(var(--space-blue))
+    );
+  }
+  
+  .neon-glow {
+    box-shadow: 0 0 20px hsl(var(--neon-cyan) / 0.5);
+  }
+  
+  .neon-glow-pink {
+    box-shadow: 0 0 20px hsl(var(--neon-pink) / 0.5);
+  }
+  
+  .neon-glow-green {
+    box-shadow: 0 0 20px hsl(var(--neon-green) / 0.5);
+  }
+  
+  .pixel-border {
+    background: linear-gradient(45deg, 
+      transparent 30%, 
+      hsl(var(--neon-cyan) / 0.1) 30%, 
+      hsl(var(--neon-cyan) / 0.1) 70%, 
+      transparent 70%
+    ),
+    linear-gradient(-45deg, 
+      transparent 30%, 
+      hsl(var(--neon-cyan) / 0.1) 30%, 
+      hsl(var(--neon-cyan) / 0.1) 70%, 
+      transparent 70%
+    );
+    background-size: 4px 4px;
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  .animate-scan {
+    animation: scan 2s linear infinite;
+  }
+  
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+  
+  .animate-glitch {
+    animation: glitch 0.5s infinite;
+  }
+}
+
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px); 
+  }
+  50% { 
+    transform: translateY(-20px); 
+  }
+}
+
+@keyframes scan {
+  0% { 
+    transform: translateX(-100%); 
+  }
+  100% { 
+    transform: translateX(100vw); 
+  }
+}
+
+@keyframes glow {
+  from { 
+    box-shadow: 0 0 20px hsl(var(--neon-cyan) / 0.5); 
+  }
+  to { 
+    box-shadow: 0 0 30px hsl(var(--neon-cyan) / 0.8), 
+                0 0 40px hsl(var(--neon-cyan) / 0.6); 
+  }
+}
+
+@keyframes glitch {
+  0%, 14%, 15%, 49%, 50%, 99%, 100% { 
+    transform: translate(0); 
+  }
+  15%, 49% { 
+    transform: translate(-2px, 2px); 
+  }
+}
+
+.starfield-bg {
+  background: 
+    radial-gradient(2px 2px at 20px 30px, hsl(var(--neon-cyan)), transparent),
+    radial-gradient(2px 2px at 40px 70px, hsl(var(--neon-pink)), transparent),
+    radial-gradient(1px 1px at 90px 40px, hsl(var(--neon-green)), transparent),
+    radial-gradient(1px 1px at 130px 80px, hsl(var(--neon-cyan)), transparent),
+    radial-gradient(2px 2px at 160px 30px, hsl(var(--neon-pink)), transparent),
+    radial-gradient(1px 1px at 200px 50px, hsl(var(--neon-green)), transparent),
+    radial-gradient(2px 2px at 240px 90px, hsl(var(--neon-cyan)), transparent),
+    radial-gradient(1px 1px at 280px 20px, hsl(var(--neon-pink)), transparent),
+    radial-gradient(1px 1px at 320px 70px, hsl(var(--neon-green)), transparent),
+    hsl(var(--space-dark));
+  background-repeat: repeat;
+  background-size: 300px 100px;
+  animation: float 20s ease-in-out infinite;
+}
+
+.glitch {
+  position: relative;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch::before {
+  animation: glitch-1 0.5s infinite;
+  color: hsl(var(--neon-pink));
+  z-index: -1;
+}
+
+.glitch::after {
+  animation: glitch-2 0.5s infinite;
+  color: hsl(var(--neon-cyan));
+  z-index: -2;
+}
+
+@keyframes glitch-1 {
+  0%, 14%, 15%, 49%, 50%, 99%, 100% { transform: translate(0); }
+  15%, 49% { transform: translate(-2px, 2px); }
+}
+
+@keyframes glitch-2 {
+  0%, 20%, 21%, 62%, 63%, 99%, 100% { transform: translate(0); }
+  21%, 62% { transform: translate(2px, -2px); }
+}
+
+.scan-line::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, hsl(var(--neon-cyan) / 0.4), transparent);
+  animation: scan 3s infinite;
+}
