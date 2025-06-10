@@ -34,7 +34,6 @@
           <div class="absolute inset-0 bg-cyan-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
         </button>
         <button class="px-8 py-3 bg-rose-400 hover:bg-rose-500 text-slate-900 transition-all duration-300 relative overflow-hidden scan-line">
-        <button onclick="" class="px-8 py-3 bg-rose-400 hover:bg-rose-500 text-slate-900 transition-all duration-300 relative overflow-hidden scan-line">
           <i class="fas fa-envelope mr-2"></i>ME CONTACTER
         </button>
       </div>
@@ -77,7 +76,6 @@ export default {
         { count: 5, label: "ANNÉES D'EXP", color: "rose" },
         { count: 100, label: "CLIENTS", color: "green" },
         { count: 24, label: "RÉCOMPENSES", color: "cyan" }
-        { count: 10, label: "PROJETS", color: "cyan" },
       ]
     }
   },
