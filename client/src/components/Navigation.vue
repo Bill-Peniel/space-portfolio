@@ -4,9 +4,7 @@
     <div class="container mx-auto px-6 py-4">
       <div class="flex justify-between items-center">
         <div class="text-2xl font-bold text-cyan-400 glitch relative" data-text="SPACE.DEV">
-          SPACE.DEV
-        <div class="text-2xl font-bold text-cyan-400 glitch relative" data-text="YONKO.DEV">
-          YONKO.DEV
+          BILL.DEV
         </div>
         
         <div class="hidden md:flex space-x-8">
